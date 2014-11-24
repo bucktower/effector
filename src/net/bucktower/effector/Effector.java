@@ -1,5 +1,7 @@
 package net.bucktower.effector;
 
+import java.util.ArrayList;
+
 import processing.core.PApplet;
 import processing.video.*;
 
@@ -10,7 +12,7 @@ public class Effector extends PApplet {
 	ArrayList<Integer> myColors;
 	ImageEditor view;
 
-	void setup() 
+	public void setup() 
 	{
 	  cam = new Capture(this, 640,360,15);
 	  frameRate(15);
@@ -37,7 +39,7 @@ public class Effector extends PApplet {
 	  //myColors.add(color(0,0,0));  // black
 	}
 
-	void draw()
+	public void draw()
 	{
 	  cam.read();
 	  view = new ImageEditor(cam);
@@ -51,7 +53,7 @@ public class Effector extends PApplet {
 	          
 	          float minDistSquared = 3*pow(256,2);  // worse than any possible color distance....
 	          
-	          for (color c: myColors)
+	          for (int c: myColors)
 	          {
 	             // how far is the color at (x,y) from this item in the list?
 	             float colDist = colorDistanceSquared(c,view.colorAt(x,y));
@@ -70,7 +72,7 @@ public class Effector extends PApplet {
 	   
 	}
 
-	float colorDistanceSquared(color c1, color c2)
+	float colorDistanceSquared(int c1, int c2)
 	{
 	   //Note: I'm not square rooting this to save time...
 	   return pow(red(c1)-red(c2),2)+pow(green(c1)-green(c2),2)+pow(blue(c1)-blue(c2),2); 
