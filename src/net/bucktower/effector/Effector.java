@@ -13,6 +13,8 @@ public class Effector extends PApplet {
 
 	public void setup() 
 	{
+	  SketchObject.setApp(this);	
+		
 	  cam = new Capture(this, 640,360,15);
 	  frameRate(15);
 	  size(640*2,360);
