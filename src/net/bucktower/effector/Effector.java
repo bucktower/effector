@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import processing.core.PApplet;
 import processing.video.*;
 
-
 public class Effector extends PApplet {
 	
 	Capture cam;
@@ -49,7 +48,7 @@ public class Effector extends PApplet {
 	      for (int x=0; x<view.width(); x++)
 	      {
 	          // find which color in the list is the closest to the color at (x,y).
-	          color closestColor = color(0,0,0); // black... but we can do better.
+	          int closestColor = color(0,0,0); // black... but we can do better.
 	          
 	          float minDistSquared = 3*pow(256,2);  // worse than any possible color distance....
 	          
