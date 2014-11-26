@@ -76,9 +76,9 @@
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="Effector/lib/base/core"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/buck.tower/git/effector/lib/base/video/video.jar"/>
-	<classpathentry kind="lib" path="/Users/buck.tower/git/effector/lib/base/video/gstreamer-java.jar"/>
-	<classpathentry kind="lib" path="/Users/buck.tower/git/effector/lib/base/video/jna.jar"/>
+	<classpathentry kind="lib" path="lib/base/video/gstreamer-java.jar"/>
+	<classpathentry kind="lib" path="lib/base/video/jna.jar"/>
+	<classpathentry kind="lib" path="lib/base/video/video.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
