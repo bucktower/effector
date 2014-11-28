@@ -10,14 +10,17 @@ public class Effector extends PApplet {
 	Capture cam;
 	ArrayList<Integer> myColors;
 	ImageEditor view;
+	
+	int camWidth = 640;
+	int camHeight = 360;
 
 	public void setup() 
 	{
 	  SketchObject.setApp(this);	
 		
-	  cam = new Capture(this, 640,360,15);
-	  frameRate(15);
-	  size(640*2,360);
+	  cam = new Capture(this, camWidth,camHeight,15);
+	  frameRate(35);
+	  size(camWidth,camHeight);
 	  cam.start();
 	  // this next part waits for the camera to warm up.
 	  int i=0;
@@ -44,7 +47,6 @@ public class Effector extends PApplet {
 	{
 	  cam.read();
 	  view = new ImageEditor(cam);
-	  view.drawAt(0,0);
 	  view.startEditing();
 	    for (int y=0; y<view.height(); y++)
 	      for (int x=0; x<view.width(); x++)
@@ -69,7 +71,7 @@ public class Effector extends PApplet {
 	          view.setColorAt(closestColor,x,y);
 	      }
 	  view.stopEditing();
-	  view.drawAt(640,0);
+	  view.drawAt(0,0);
 	   
 	}
 
