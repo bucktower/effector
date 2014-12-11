@@ -28,7 +28,7 @@ public class Effector extends PApplet {
 		
 	  cam = new Capture(this, camWidth,camHeight,15);
 	  frameRate(35);
-	  size(camWidth*2,camHeight*2);
+	  size(1280,720);
 	  cam.start();
 	  // this next part waits for the camera to warm up.
 	  int i=0;
