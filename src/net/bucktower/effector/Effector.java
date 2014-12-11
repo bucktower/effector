@@ -16,6 +16,9 @@ public class Effector extends PApplet {
 	ImageEditor view3;
 	ImageEditor view4;
 	
+	//CHANGE THIS TO "portrait" TO SET TO PORTRAIT MODE!
+	String mode = "cam";
+	
 	int camWidth = 640;
 	int camHeight = 360;
 
@@ -60,10 +63,17 @@ public class Effector extends PApplet {
 	public void draw()
 	{
 	  cam.read();
-	  view = new ImageEditor(cam);
-	  view2 = new ImageEditor(cam);
-	  view3 = new ImageEditor(cam);
-	  view4 = new ImageEditor(cam);
+	  if(mode == "cam"){
+		  view = new ImageEditor(cam);
+	  	  view2 = new ImageEditor(cam);
+	  	  view3 = new ImageEditor(cam);
+	  	  view4 = new ImageEditor(cam);
+	  }else if(mode == "portrait"){
+		  view = new ImageEditor("net/bucktower/effector/data/portrait.png");
+		  view2 = new ImageEditor("net/bucktower/effector/data/portrait.png");
+		  view3 = new ImageEditor("net/bucktower/effector/data/portrait.png");
+		  view4 = new ImageEditor("net/bucktower/effector/data/portrait.png");
+	  }
 	  view.startEditing();
 	  view2.startEditing();
 	  view3.startEditing();
